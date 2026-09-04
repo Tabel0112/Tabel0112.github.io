@@ -72,6 +72,44 @@ const capabilities = [
   },
 ];
 
+function ProjectSymbol({ type }: { type: string }) {
+  if (type === "lullaby") {
+    return (
+      <div className="product-symbol symbol-lullaby">
+        <span className="moon" />
+        <i className="star star-one" /><i className="star star-two" /><i className="star star-three" />
+      </div>
+    );
+  }
+
+  if (type === "vault") {
+    return (
+      <div className="product-symbol symbol-vault">
+        <span className="vault-sheet sheet-back" />
+        <span className="vault-sheet sheet-front"><i /><i /><i /></span>
+        <b className="vault-link">↗</b>
+      </div>
+    );
+  }
+
+  if (type === "draft") {
+    return (
+      <div className="product-symbol symbol-draft">
+        <span>DRAFT</span><i>®</i>
+      </div>
+    );
+  }
+
+  return (
+    <div className="product-symbol symbol-economy">
+      <span className="chart-line line-one" />
+      <span className="chart-line line-two" />
+      <i className="chart-node node-a" /><i className="chart-node node-b" />
+      <i className="chart-node node-c" /><i className="chart-node node-d" />
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main>
@@ -104,16 +142,13 @@ export default function Home() {
         </div>
 
         <div className="signal-card" aria-hidden="true">
-          <div className="signal-top"><span>BUILD SIGNAL</span><span>LIVE</span></div>
-          <div className="signal-orbit">
-            <span className="orbit orbit-one" />
-            <span className="orbit orbit-two" />
-            <span className="signal-core">A</span>
-            <i className="node node-one" />
-            <i className="node node-two" />
-            <i className="node node-three" />
+          <div className="signal-top"><span>SELECTED SYSTEMS</span><span>04 BUILDS</span></div>
+          <div className="build-stack">
+            <div className="stack-panel panel-product"><span>PRODUCT</span><b>01</b></div>
+            <div className="stack-panel panel-ai"><span>AI</span><b>02</b></div>
+            <div className="stack-panel panel-mobile"><span>MOBILE</span><b>03</b></div>
           </div>
-          <div className="signal-bottom"><span>43.653° N</span><span>79.383° W</span></div>
+          <div className="signal-bottom"><span>TORONTO, CANADA</span><span>OPEN 2026</span></div>
         </div>
       </section>
 
@@ -129,7 +164,7 @@ export default function Home() {
             <article className="project" key={project.name}>
               <div className={`project-visual visual-${project.visual}`} aria-hidden="true">
                 <span className="visual-index">{project.number}</span>
-                <div className="visual-mark">{project.name.slice(0, 1)}</div>
+                <ProjectSymbol type={project.visual} />
                 <div className="visual-grid" />
               </div>
               <div className="project-copy">

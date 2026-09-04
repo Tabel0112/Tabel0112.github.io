@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     description:
       "AI products, mobile experiences, and polished digital work built from idea to production.",
     type: "website",
-    images: [{ url: "/og.png", width: 1729, height: 910, alt: "Abel — Product Engineer" }],
+    images: [{ url: "/og-v2.png", width: 1200, height: 630, alt: "Abel — Product Engineer" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Abel — Product Engineer",
     description:
       "AI products, mobile experiences, and polished digital work built from idea to production.",
-    images: ["/og.png"],
+    images: ["/og-v2.png"],
   },
 };
 
