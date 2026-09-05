@@ -10,6 +10,7 @@ const projects = [
     href: null,
     note: "Private product",
     visual: "lullaby",
+    image: "/lullaby-logo-isolated-v7.png",
   },
   {
     number: "02",
@@ -22,6 +23,7 @@ const projects = [
     href: "https://github.com/Tabel0112/interview-intelligence-vault",
     note: "View repository ↗",
     visual: "vault",
+    image: "/tmv-mark-v5.svg",
   },
   {
     number: "03",
@@ -34,6 +36,7 @@ const projects = [
     href: null,
     note: "Private build",
     visual: "draft",
+    image: "/draft-logo-original-v5.png",
   },
   {
     number: "04",
@@ -46,6 +49,7 @@ const projects = [
     href: "https://github.com/Tabel0112/CSC111-Project-2",
     note: "View repository ↗",
     visual: "economy",
+    image: "/economy-mark-v5.svg",
   },
 ];
 
@@ -71,44 +75,6 @@ const capabilities = [
     body: "Developing APIs, databases, migrations, tests, and deployment paths that hold up beyond the demo.",
   },
 ];
-
-function ProjectSymbol({ type }: { type: string }) {
-  if (type === "lullaby") {
-    return (
-      <div className="product-symbol symbol-lullaby">
-        <span className="moon" />
-        <i className="star star-one" /><i className="star star-two" /><i className="star star-three" />
-      </div>
-    );
-  }
-
-  if (type === "vault") {
-    return (
-      <div className="product-symbol symbol-vault">
-        <span className="vault-sheet sheet-back" />
-        <span className="vault-sheet sheet-front"><i /><i /><i /></span>
-        <b className="vault-link">↗</b>
-      </div>
-    );
-  }
-
-  if (type === "draft") {
-    return (
-      <div className="product-symbol symbol-draft">
-        <span>DRAFT</span><i>®</i>
-      </div>
-    );
-  }
-
-  return (
-    <div className="product-symbol symbol-economy">
-      <span className="chart-line line-one" />
-      <span className="chart-line line-two" />
-      <i className="chart-node node-a" /><i className="chart-node node-b" />
-      <i className="chart-node node-c" /><i className="chart-node node-d" />
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -164,8 +130,7 @@ export default function Home() {
             <article className="project" key={project.name}>
               <div className={`project-visual visual-${project.visual}`} aria-hidden="true">
                 <span className="visual-index">{project.number}</span>
-                <ProjectSymbol type={project.visual} />
-                <div className="visual-grid" />
+                <img src={project.image} alt="" loading="lazy" decoding="async" />
               </div>
               <div className="project-copy">
                 <p className="project-meta">{project.category}</p>

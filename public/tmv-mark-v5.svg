@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Transcript Memory Vault project mark</title>
+  <desc id="desc">Transcript lines pass through a verified evidence chain between two vault brackets.</desc>
+  <path d="M174 132h-70v376h70M466 132h70v376h-70" fill="none" stroke="#16181B" stroke-width="44" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M206 214h190M206 320h228M244 426h190" fill="none" stroke="#5449D7" stroke-width="38" stroke-linecap="round"/>
+  <path d="m224 426 92-106 94-106" fill="none" stroke="#16181B" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="224" cy="426" r="29" fill="#F7F6F1" stroke="#16181B" stroke-width="24"/>
+  <circle cx="316" cy="320" r="34" fill="#E65F43"/>
+  <circle cx="410" cy="214" r="29" fill="#F7F6F1" stroke="#16181B" stroke-width="24"/>
+</svg>

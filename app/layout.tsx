@@ -6,7 +6,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://abel-product-engineer.alight-pearl-2480.chatgpt.site"),
+  metadataBase: new URL("https://abel-product-engineer.tabel0112.chatgpt.site"),
   title: "Abel — Product Engineer",
   description:
     "Product-minded software engineer building AI-powered applications, mobile experiences, and polished digital products.",
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     description:
       "AI products, mobile experiences, and polished digital work built from idea to production.",
     type: "website",
-    images: [{ url: "/og-v2.png", width: 1200, height: 630, alt: "Abel — Product Engineer" }],
+    images: [{ url: "/og-cobalt-v5.png", width: 1200, height: 630, alt: "Abel — Product Engineer" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Abel — Product Engineer",
     description:
       "AI products, mobile experiences, and polished digital work built from idea to production.",
-    images: ["/og-v2.png"],
+    images: ["/og-cobalt-v5.png"],
   },
 };
 

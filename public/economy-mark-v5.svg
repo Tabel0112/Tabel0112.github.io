@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Economic Shock Simulator project mark</title>
+  <desc id="desc">A coral economic shock sends three measured waves through a connected system.</desc>
+  <path d="M146 320h110M282 202l73 73M282 438l73-73" fill="none" stroke="#16181B" stroke-width="40" stroke-linecap="round"/>
+  <path d="M340 148a244 244 0 0 1 0 344M388 210a168 168 0 0 1 0 220M435 270a82 82 0 0 1 0 100" fill="none" stroke="#5449D7" stroke-width="38" stroke-linecap="round"/>
+  <circle cx="140" cy="320" r="56" fill="#E65F43"/>
+  <circle cx="282" cy="202" r="28" fill="#16181B"/>
+  <circle cx="282" cy="438" r="28" fill="#16181B"/>
+  <circle cx="256" cy="320" r="28" fill="#16181B"/>
+</svg>
