@@ -4,9 +4,10 @@ import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const siteUrl = process.env.SITE_URL ?? "https://abel-product-engineer.tabel0112.chatgpt.site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://abel-product-engineer.tabel0112.chatgpt.site"),
+  metadataBase: new URL(siteUrl),
   title: "Abel — Product Engineer",
   description:
     "Product-minded software engineer building AI-powered applications, mobile experiences, and polished digital products.",
