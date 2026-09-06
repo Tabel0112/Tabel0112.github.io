@@ -1,5 +1,6 @@
 const compactProjects = [
   {
+    id: "transcript-memory-vault",
     number: "02",
     name: "Transcript Memory Vault",
     category: "Trustworthy AI · Knowledge systems",
@@ -11,6 +12,7 @@ const compactProjects = [
     href: "https://github.com/Tabel0112/interview-intelligence-vault",
   },
   {
+    id: "economic-shock-simulator",
     number: "03",
     name: "Economic Shock Simulator",
     category: "Algorithms · Data visualization",
@@ -28,19 +30,22 @@ const capabilities = [
     number: "01",
     title: "Product engineering",
     body: "Shaping an idea into a useful interface, then building the full path that makes it work.",
-    evidence: "Lullaby · DRAFT",
+    evidence: [
+      { label: "Lullaby", href: "#lullaby" },
+      { label: "DRAFT", href: "#draft" },
+    ],
   },
   {
     number: "02",
     title: "AI systems",
     body: "Designing retrieval and evidence flows with clear reliability boundaries—not just a model call.",
-    evidence: "Transcript Memory Vault",
+    evidence: [{ label: "Transcript Memory Vault", href: "#transcript-memory-vault" }],
   },
   {
     number: "03",
     title: "Interactive software",
     body: "Making technical systems legible through responsive interfaces, controls, and visualization.",
-    evidence: "Economic Shock Simulator",
+    evidence: [{ label: "Economic Shock Simulator", href: "#economic-shock-simulator" }],
   },
 ];
 
@@ -105,7 +110,7 @@ export default function Home() {
         </div>
 
         <div className="content-grid project-list">
-          <article className="project project-featured">
+          <article className="project project-featured" id="lullaby">
             <div className="project-visual visual-lullaby">
               <span className="visual-index" aria-hidden="true">01</span>
               <img src="/lullaby-logo-isolated-v7.png" alt="Lullaby" decoding="async" />
@@ -128,7 +133,7 @@ export default function Home() {
 
           <div className="compact-project-grid">
             {compactProjects.map((project) => (
-              <article className="compact-project" key={project.name}>
+              <article className="compact-project" id={project.id} key={project.name}>
                 <div className="compact-topline">
                   <span>{project.number}</span>
                   <p className="project-meta">{project.category}</p>
@@ -144,7 +149,7 @@ export default function Home() {
             ))}
           </div>
 
-          <article className="project project-draft">
+          <article className="project project-draft" id="draft">
             <div className="project-visual visual-draft">
               <span className="visual-index" aria-hidden="true">04</span>
               <img src="/draft-logo-original-v5.png" alt="DRAFT" loading="lazy" decoding="async" />
@@ -179,7 +184,14 @@ export default function Home() {
                 <div>
                   <h3>{capability.title}</h3>
                   <p>{capability.body}</p>
-                  <span className="capability-evidence">{capability.evidence}</span>
+                  <span className="capability-evidence">
+                    {capability.evidence.map((item, index) => (
+                      <span key={item.href}>
+                        {index > 0 && <span aria-hidden="true"> · </span>}
+                        <a href={item.href}>{item.label}</a>
+                      </span>
+                    ))}
+                  </span>
                 </div>
               </article>
             ))}

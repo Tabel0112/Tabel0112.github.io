@@ -23,5 +23,9 @@ test("server-renders the portfolio", async () => {
   assert.match(html, /Transcript Memory Vault/);
   assert.match(html, /DRAFT/);
   assert.match(html, /Economic Shock Simulator/);
+  assert.match(html, /href="#lullaby"/);
+  assert.match(html, /href="#draft"/);
+  assert.match(html, /id="transcript-memory-vault"/);
+  assert.match(html, /id="economic-shock-simulator"/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });
