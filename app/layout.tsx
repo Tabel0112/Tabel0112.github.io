@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Abel — Product Engineer",
   description:
     "Product-minded software engineer building AI-powered applications, mobile experiences, and polished digital products.",
+  icons: { icon: "/favicon.svg" },
   openGraph: {
     title: "Abel — Product Engineer",
     description:

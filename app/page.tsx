@@ -1,55 +1,25 @@
-const projects = [
-  {
-    number: "01",
-    name: "Lullaby",
-    category: "Mobile product · Full-stack · AI",
-    description:
-      "A personalized sleep-audio experience engineered from mobile interface to production backend.",
-    proof: ["Personalized audio", "Reliable playback", "Production delivery"],
-    stack: ["React Native", "Expo", "FastAPI", "PostgreSQL"],
-    href: null,
-    note: "Private product",
-    visual: "lullaby",
-    image: "/lullaby-logo-isolated-v7.png",
-  },
+const compactProjects = [
   {
     number: "02",
     name: "Transcript Memory Vault",
     category: "Trustworthy AI · Knowledge systems",
     description:
-      "An evidence-grounded memory system where every generated claim traces back to exact transcript evidence.",
-    proof: ["Citation provenance", "Hybrid retrieval", "MCP integration"],
+      "An evidence-grounded transcript memory system that keeps generated claims traceable to source evidence.",
+    contribution:
+      "Combines citation provenance, hybrid retrieval, and an MCP interface in a TypeScript and SQLite application.",
     stack: ["TypeScript", "SQLite", "LLMs", "Embeddings"],
     href: "https://github.com/Tabel0112/interview-intelligence-vault",
-    note: "View repository ↗",
-    visual: "vault",
-    image: "/tmv-mark-v5.svg",
   },
   {
     number: "03",
-    name: "DRAFT",
-    category: "Commerce · Frontend · Design",
-    description:
-      "A configurable Shopify fashion storefront with custom editorial sections and a responsive visual system.",
-    proof: ["Custom Liquid sections", "Responsive design", "Quality checks"],
-    stack: ["Shopify", "Liquid", "CSS", "GitHub Actions"],
-    href: null,
-    note: "Private build",
-    visual: "draft",
-    image: "/draft-logo-original-v5.png",
-  },
-  {
-    number: "04",
     name: "Economic Shock Simulator",
     category: "Algorithms · Data visualization",
     description:
-      "An interactive application for exploring how economic shocks propagate through weighted country graphs.",
-    proof: ["Weighted graphs", "Interactive controls", "Data visualization"],
+      "An interactive simulator for exploring how economic shocks propagate across a weighted country graph.",
+    contribution:
+      "Uses Python with Dash and Plotly to connect scenario controls to graph-based results.",
     stack: ["Python", "Dash", "Plotly", "Graph theory"],
     href: "https://github.com/Tabel0112/CSC111-Project-2",
-    note: "View repository ↗",
-    visual: "economy",
-    image: "/economy-mark-v5.svg",
   },
 ];
 
@@ -57,153 +27,184 @@ const capabilities = [
   {
     number: "01",
     title: "Product engineering",
-    body: "Taking an idea through product decisions, interface design, implementation, and real-world delivery.",
+    body: "Shaping an idea into a useful interface, then building the full path that makes it work.",
+    evidence: "Lullaby · DRAFT",
   },
   {
     number: "02",
     title: "AI systems",
-    body: "Designing LLM, embedding, retrieval, and evidence pipelines with explicit reliability boundaries.",
+    body: "Designing retrieval and evidence flows with clear reliability boundaries—not just a model call.",
+    evidence: "Transcript Memory Vault",
   },
   {
     number: "03",
-    title: "Mobile & frontend",
-    body: "Building responsive web experiences and native-feeling mobile flows with careful interaction details.",
-  },
-  {
-    number: "04",
-    title: "Backend foundations",
-    body: "Developing APIs, databases, migrations, tests, and deployment paths that hold up beyond the demo.",
+    title: "Interactive software",
+    body: "Making technical systems legible through responsive interfaces, controls, and visualization.",
+    evidence: "Economic Shock Simulator",
   },
 ];
+
+function Tags({ items }: { items: string[] }) {
+  return (
+    <ul className="tag-list" aria-label="Technologies">
+      {items.map((item) => <li key={item}>{item}</li>)}
+    </ul>
+  );
+}
 
 export default function Home() {
   return (
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Abel, home">
-          A<span>/01</span>
+          Abel<span>/</span>
         </a>
         <nav aria-label="Primary navigation">
           <a href="#work">Work</a>
-          <a href="#capabilities">Capabilities</a>
-          <a href="#about">About</a>
-          <a href="https://github.com/Tabel0112" target="_blank" rel="noreferrer">
-            GitHub ↗
+          <a className="about-nav" href="#about">About</a>
+          <a className="nav-external" href="https://github.com/Tabel0112" target="_blank" rel="noreferrer">
+            GitHub <span aria-hidden="true">↗</span>
           </a>
         </nav>
       </header>
 
-      <section className="hero" id="top">
+      <section className="hero content-grid" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Software · AI · Product</p>
-          <h1>I build useful software from idea to production.</h1>
+          <p className="eyebrow">Software · AI · Product</p>
+          <h1>Useful ideas.<br />Thoughtfully <span>built.</span></h1>
           <p className="hero-lede">
-            I’m Abel—a product-minded engineer creating full-stack mobile apps,
-            trustworthy AI systems, and thoughtful digital experiences.
+            I build mobile apps, AI systems, and web experiences—from the first idea
+            to the details that make them work.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#work">Explore my work ↓</a>
-            <a className="button button-ghost" href="https://github.com/Tabel0112" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a className="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+            <a className="button button-secondary" href="https://github.com/Tabel0112" target="_blank" rel="noreferrer">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
 
         <div className="signal-card" aria-hidden="true">
-          <div className="signal-top"><span>SELECTED SYSTEMS</span><span>04 BUILDS</span></div>
+          <div className="signal-top"><span>Selected systems</span><span>04 builds</span></div>
           <div className="build-stack">
-            <div className="stack-panel panel-product"><span>PRODUCT</span><b>01</b></div>
+            <div className="stack-panel panel-product"><span>Product</span><b>01</b></div>
             <div className="stack-panel panel-ai"><span>AI</span><b>02</b></div>
-            <div className="stack-panel panel-mobile"><span>MOBILE</span><b>03</b></div>
+            <div className="stack-panel panel-mobile"><span>Mobile</span><b>03</b></div>
           </div>
-          <div className="signal-bottom"><span>TORONTO, CANADA</span><span>OPEN 2026</span></div>
+          <div className="signal-bottom"><span>Toronto, Canada</span><span>Open 2026</span></div>
         </div>
       </section>
 
       <section className="work-section" id="work">
-        <div className="section-heading">
+        <div className="content-grid section-intro">
           <p className="section-index">01 / Selected work</p>
-          <h2>Products with a point of view.</h2>
-          <p>From sleep technology to evidence-grounded AI and commerce—each project balances product clarity with technical depth.</p>
+          <div>
+            <h2>Selected projects</h2>
+            <p>Mobile, AI, commerce, and simulation.</p>
+          </div>
         </div>
 
-        <div className="project-list">
-          {projects.map((project) => (
-            <article className="project" key={project.name}>
-              <div className={`project-visual visual-${project.visual}`} aria-hidden="true">
-                <span className="visual-index">{project.number}</span>
-                <img src={project.image} alt="" loading="lazy" decoding="async" />
+        <div className="content-grid project-list">
+          <article className="project project-featured">
+            <div className="project-visual visual-lullaby">
+              <span className="visual-index" aria-hidden="true">01</span>
+              <img src="/lullaby-logo-isolated-v7.png" alt="Lullaby" decoding="async" />
+            </div>
+            <div className="project-copy">
+              <p className="project-meta">Mobile product · Full-stack · AI</p>
+              <h3>Lullaby</h3>
+              <p className="project-description">
+                A personalized sleep-audio experience spanning a mobile interface, playback, and its supporting backend.
+              </p>
+              <p className="project-contribution">
+                Connects a React Native and Expo mobile experience to FastAPI services and PostgreSQL data.
+              </p>
+              <Tags items={["React Native", "Expo", "FastAPI", "PostgreSQL"]} />
+              <div className="project-status">
+                <span className="project-note">Private source</span>
               </div>
-              <div className="project-copy">
-                <p className="project-meta">{project.category}</p>
+            </div>
+          </article>
+
+          <div className="compact-project-grid">
+            {compactProjects.map((project) => (
+              <article className="compact-project" key={project.name}>
+                <div className="compact-topline">
+                  <span>{project.number}</span>
+                  <p className="project-meta">{project.category}</p>
+                </div>
                 <h3>{project.name}</h3>
                 <p className="project-description">{project.description}</p>
-                <ul className="proof-list" aria-label={`${project.name} highlights`}>
-                  {project.proof.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-                <div className="project-footer">
-                  <div className="tag-list">
-                    {project.stack.map((item) => <span key={item}>{item}</span>)}
-                  </div>
-                  {project.href ? (
-                    <a className="project-link" href={project.href} target="_blank" rel="noreferrer">{project.note}</a>
-                  ) : (
-                    <span className="project-note">{project.note}</span>
-                  )}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+                <p className="project-contribution">{project.contribution}</p>
+                <Tags items={project.stack} />
+                <a className="text-link" href={project.href} target="_blank" rel="noreferrer">
+                  View repository <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+            ))}
+          </div>
 
-      <section className="capabilities-section" id="capabilities">
-        <div className="section-heading inverse">
-          <p className="section-index">02 / Capabilities</p>
-          <h2>I work across the whole product.</h2>
-        </div>
-        <div className="capability-grid">
-          {capabilities.map((capability) => (
-            <article key={capability.title}>
-              <span>{capability.number}</span>
-              <h3>{capability.title}</h3>
-              <p>{capability.body}</p>
-            </article>
-          ))}
-        </div>
-        <div className="toolbelt" aria-label="Technology stack">
-          <span>TypeScript</span><span>Python</span><span>React Native</span><span>Expo</span>
-          <span>FastAPI</span><span>PostgreSQL</span><span>SQLite</span><span>Shopify Liquid</span>
+          <article className="project project-draft">
+            <div className="project-visual visual-draft">
+              <span className="visual-index" aria-hidden="true">04</span>
+              <img src="/draft-logo-original-v5.png" alt="DRAFT" loading="lazy" decoding="async" />
+            </div>
+            <div className="project-copy">
+              <p className="project-meta">Commerce · Frontend · Design</p>
+              <h3>DRAFT</h3>
+              <p className="project-description">
+                A configurable Shopify fashion storefront built from custom editorial sections and responsive layouts.
+              </p>
+              <p className="project-contribution">
+                Uses reusable Liquid sections and GitHub Actions quality checks to keep storefront changes consistent.
+              </p>
+              <Tags items={["Shopify", "Liquid", "CSS", "GitHub Actions"]} />
+              <span className="project-note draft-note">Private build</span>
+            </div>
+          </article>
         </div>
       </section>
 
       <section className="about-section" id="about">
-        <p className="section-index">03 / About</p>
-        <div className="about-grid">
-          <h2>I like the messy middle between an ambitious idea and a product people can actually use.</h2>
-          <div>
-            <p>
-              My projects span mobile sleep experiences, evidence-grounded AI,
-              commerce interfaces, and graph simulations. I care about how software
-              feels—and about the systems that make it dependable underneath.
-            </p>
-            <p>
-              I’m open to software, AI, product-engineering, internship, and hackathon opportunities.
-            </p>
+        <div className="content-grid">
+          <div className="about-intro">
+            <p className="section-index">02 / About</p>
+            <h2>I care about how software works—and how it feels.</h2>
+            <p>Across mobile, AI, commerce, and simulation, I focus on clear product decisions, dependable systems, and thoughtful interactions.</p>
+          </div>
+          <div className="capability-list" aria-label="Capabilities">
+            {capabilities.map((capability) => (
+              <article key={capability.title}>
+                <span className="capability-index">{capability.number}</span>
+                <div>
+                  <h3>{capability.title}</h3>
+                  <p>{capability.body}</p>
+                  <span className="capability-evidence">{capability.evidence}</span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="contact-section">
-        <p className="eyebrow"><span /> Available for what’s next</p>
-        <h2>Have an ambitious idea?</h2>
-        <a className="contact-link" href="https://github.com/Tabel0112" target="_blank" rel="noreferrer">
-          Let’s connect on GitHub <span>↗</span>
-        </a>
+        <div className="content-grid contact-grid">
+          <div>
+            <p className="section-index">03 / Contact</p>
+            <h2>Let’s make something useful.</h2>
+          </div>
+          <a className="contact-link" href="https://github.com/Tabel0112" target="_blank" rel="noreferrer">
+            Find me on GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </section>
 
       <footer>
-        <span>© 2026 Abel</span>
-        <span>Built with care in Toronto</span>
-        <a href="#top">Back to top ↑</a>
+        <div className="content-grid footer-grid">
+          <span>© 2026 Abel</span>
+          <span>Toronto, Canada</span>
+          <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
       </footer>
     </main>
   );

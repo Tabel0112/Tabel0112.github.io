@@ -1,13 +1,13 @@
 # Abel — Product Engineer
 
-My portfolio for job applications and hackathons. It presents four selected projects across mobile product development, trustworthy AI, data systems, and economic simulation.
+My portfolio for job applications and hackathons. It presents four selected projects across mobile product development, trustworthy AI, commerce, and economic simulation.
 
 ## Selected work
 
 - **Lullaby** — personalized sleep audio built as a full-stack mobile product
-- **Draft** — evidence-grounded AI for answerable, inspectable research
-- **TMV** — a technical market-visualization system
-- **Economic Shock Simulator** — an interactive model for exploring economic scenarios
+- **Transcript Memory Vault** — evidence-grounded transcript memory with traceable citations, retrieval, and MCP integration
+- **DRAFT** — a configurable Shopify fashion storefront with responsive editorial sections
+- **Economic Shock Simulator** — an interactive model of economic shock propagation through weighted country graphs
 
 ## Local development
 
